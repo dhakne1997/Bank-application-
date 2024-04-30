@@ -1,0 +1,134 @@
+
+--------------------------TokenGenerate New User Added --------------------------------
+post = http://localhost:8080/auth/addNewUser
+
+json =
+{
+    "id":1,
+    "name": "dhakne",
+"password": "1234",
+"email": "bala1@email.com",
+"roles": "ROLE_USER"
+}
+
+
+
+
+---------------TokenGenerate Request--------------------------------------
+post= http://localhost:8080/auth/generateToken
+json =
+{
+    "username":"balaji",
+    "password":"123"
+}
+
+
+
+---------------------------------------------Account Create -----------------------------
+post = http://localhost:8080/bank/create
+
+json= 
+{
+  "accountId": 3,
+  "accountHolderName": "balu",
+  "balance": 10000.0,
+
+ "sms":{
+    "toNumber": "+send user no"
+
+ }
+
+}
+
+----------------------------------Account Gettinng ------------------------------
+get= http://localhost:8080/bank/2
+
+-------------------------------------- Account Update ----------------------------------
+put = http://localhost:8080/bank/update
+
+json=
+{
+  "accountId": 2,
+  "accountHolderName": "balu",
+  "balance": 100000.0,
+
+
+    "toNumber": "+send user no"
+
+
+
+}
+
+-------------------------------------- Account Delete ----------------------------------
+
+delete= http://localhost:8080/bank/delete/3
+
+json= {
+     "toNumber": "+send user no"
+
+ }
+
+
+ 
+------------------------------------ Account Withdraw ------------------------------
+post = http://localhost:8080/bank/withdraw?accountId=2&amount=1000
+
+json= 
+ 
+ {
+
+
+    "toNumber": "+919834217416"
+  
+}
+ 
+ params=accountId=2
+        amount=1000
+        
+        
+ --------------------------------------------------Account Transfer -------------------------------
+ 
+ post= http://localhost:8080/bank/transfer?fromAccountId=1&toAccountId=2&amount=10000       
+ 
+json= 
+ 
+ {
+
+
+    "toNumber": "+919834217416"
+  
+}
+
+params= fromAccountId=1 
+        toAccountId=2
+        amount=10000
+
+------------------------------ Account deposite --------------------------
+post = http://localhost:8080/bank/deposit?accountId=1&amount=5000000
+
+json= 
+ 
+ {
+
+
+    "toNumber": "+919834217416"
+  
+}
+ 
+ params=accountId=2
+        amount=1000
+        
+        
+        ---------------------------Account Balance ---------------------------
+        
+        get =http://localhost:8080/bank/balance/2
+   json= 
+ 
+ {
+
+
+    "toNumber": "+919834217416"
+  
+}
+      
+        
